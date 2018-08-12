@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1>Pokemon Detailseite für Pokemon mit der Nummer {{ id }}</h1>
+
+        {% if pokemonEntity is not null %}
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{{ pokemonEntity.picture }}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">
+                        Name: {{ pokemonEntity.name }}<br>
+                        Gewicht: {{ pokemonEntity.weight }}<br>
+                        Größe: {{ pokemonEntity.height }}<br>
+                    </p>
+                </div>
+            </div>
+        {% else %}
+            <p>Pokemon nicht gefunden!</p>
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
