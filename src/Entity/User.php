@@ -27,6 +27,11 @@ class User implements UserInterface, \Serializable
     /**
      * @ORM\Column(type="string")
      */
+    private $email;
+
+    /**
+     * @ORM\Column(type="string")
+     */
     private $password;
 
     /**
@@ -176,5 +181,19 @@ class User implements UserInterface, \Serializable
         $this->roles = $roles;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
 
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
 }
